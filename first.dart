@@ -1,78 +1,83 @@
-void main() {
-  // int i = 0;
-//   for (int i = 0; i <= 10; i++) {
-//     print(i);
+// class Car_1 {
+//   String name() {
+//     return 'Car_1';
 //   }
+// }
 
-  // List listData = ['name', 'city', 'addres', 'name2', 'name3'];
-  // for (int i = 0; i < listData.length; i++) {
-  //   // print(listData[i]);
-  //   // print(i);
-  //   print('${listData[i]} ---${i}');
-  // }
-  // print(listData[0]);
-  // print(listData.length);
+// class Car_2 extends Car_1 {
+//   @override
+//   String name() {
+//     return 'Car_2';
+//   }
+// }
 
-  // List students = [
-  //   'student1',
-  //   'student2',
-  //   'student3',
-  //   'student4',
-  //   'student5',
-  //   'student6',
-  //   'student7',
-  // ];
-  // print(students.map((e) => e));
+// class FinalClass extends Car_2 {
+//   @override
+//   String name() {
+//     return 'FinalClass';
+//   }
+// }
 
-  // String name() {
-  //   return 'CodeWithRafiq';
-  // }
-  // print(name());
-  // print(name());
-  // print(name());
-  // print(name());
-  // print(name());
-  // print(name());
-  // print(name());
-  // print(name());
+// void main() {
+//   var fclass = FinalClass();
+//   var c1 = Car_1();
+//   var c2 = Car_2();
+//   print(fclass.name());
+//   print(c1.name());
+//   print(c2.name());
+// }
 
-  // dynamic add() {
-  //   int n1 = 3;
-  //   int n2 = 4;
-  //   return n1 + n2;
-  // }
-  // print(add());
+//  // / / // / // / //
 
-  // dynamic add(n1, n2) {
-  //   return n1 + n2;
-  // }
-  // print(add(4, 4));
-  // print(add(44, 55));
+// void main() {
+// var name = 'name1';
+// name = 'name2';
+// print(name);
 
-  // void add(n1, n2) {
-  //   print(n1 + n2);
-  // }
-  // add(3, 5);
+// const name = 'CodeWithRafiq';
+// print(name);
 
-  // int returnint(int a, int b) {
-  //   return a + b;
-  // }
-  // print(returnint(3, 5));
+// final String name ;
 
-  // void
-  // String
-  // int
-  // dynamic
-  // double
-  // List
+// }
+//  // / / // / // / //
 
-  // List retList() {
-  //   return [];
-  // }
+// class Student {
+//   final String name;
+//   final int age;
+//   final String classNo;
+//   final int roll;
+//   Student({
+//     this.name,
+//     this.age,
+//     this.classNo,
+//     this.roll,
+//   });
+//   String get fullinfo {
+//     return "name:${name},Age:${age},Class:${classNo},Roll:${roll}";
+//   }
+// }
 
-  // dynamic add(int a, int b) {
-  //   return a + b;
-  // }
-  // var add_result = add(4, 4);
-  // print(add_result);
+// main() {
+//   var s1 = Student(name: "Student1", age: 4, classNo: "1st", roll: 4);
+//   var s2 = Student(name: "Student2", age: 8, classNo: "1st", roll: 6);
+//   print(s1.fullinfo);
+// }
+
+//  // / / // / // / //
+//  // / / // / // / //
+
+mixin Mix1 {
+  String name1 = "mix1";
+}
+mixin Mix2 {
+  String name2 = "mix2";
+}
+
+class FinalClass with Mix1, Mix2 {}
+
+main() {
+  var c1 = FinalClass();
+  print(c1.name1);
+  print(c1.name2);
 }
