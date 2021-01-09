@@ -1,87 +1,78 @@
 void main() {
-  // String = '' / ""
-  // Int = 454
-  // double = 4.565
+  // int i = 0;
+//   for (int i = 0; i <= 10; i++) {
+//     print(i);
+//   }
+
+  // List listData = ['name', 'city', 'addres', 'name2', 'name3'];
+  // for (int i = 0; i < listData.length; i++) {
+  //   // print(listData[i]);
+  //   // print(i);
+  //   print('${listData[i]} ---${i}');
+  // }
+  // print(listData[0]);
+  // print(listData.length);
+
+  // List students = [
+  //   'student1',
+  //   'student2',
+  //   'student3',
+  //   'student4',
+  //   'student5',
+  //   'student6',
+  //   'student7',
+  // ];
+  // print(students.map((e) => e));
+
+  // String name() {
+  //   return 'CodeWithRafiq';
+  // }
+  // print(name());
+  // print(name());
+  // print(name());
+  // print(name());
+  // print(name());
+  // print(name());
+  // print(name());
+  // print(name());
+
+  // dynamic add() {
+  //   int n1 = 3;
+  //   int n2 = 4;
+  //   return n1 + n2;
+  // }
+  // print(add());
+
+  // dynamic add(n1, n2) {
+  //   return n1 + n2;
+  // }
+  // print(add(4, 4));
+  // print(add(44, 55));
+
+  // void add(n1, n2) {
+  //   print(n1 + n2);
+  // }
+  // add(3, 5);
+
+  // int returnint(int a, int b) {
+  //   return a + b;
+  // }
+  // print(returnint(3, 5));
+
+  // void
+  // String
+  // int
   // dynamic
+  // double
   // List
-  // bool
-  // Map
 
-  // dynamic name;
-  // name = 'CodeWithraiq';
-  // name = 4355;
-  // print(name);
-
-  // String name;
-  // name = "This is a String";
-  // print(name);
-
-  // int year;
-  // year = 44;
-  // print(year);
-
-  // List alist;
-  // String name = "Rafiq";
-  // List blist = [1, 2, 3, 4, 5];
-  // alist = ['string', 5454, 454.545, name, blist];
-  // print(alist[4][1]);
-
-  // bool t = true;
-  // bool f = false;
-
-  // Map mapdata = {
-  //   "name": 'CodeWithRafiq',
-  //   'age': 21,
-  //   'city': 'Comilla',
-  //   'country': 'Bangladesh',
-  //   'subject': ['Bangla', 'Math', 'DataScience', 'computer'],
-  //   'map2': {'a': 1, 'b': 2},
-  // };
-  // print(mapdata["subject"][0]);
-
-  // print(2 + 1);
-  // print(3 - 1);
-  // print(10 / 2);
-  // print(10 % 3);
-
-  // print(4 > 3);
-  // print(4 < 3);
-  // int num1 = 10;
-  // int num2 = 22;
-  // print(num1 > num2);
-  // print(num1 == num2);
-
-  // int numberr = 1;
-  // numberr -- ;
-
-  // print(2 * 4);
-
-  // num num1 = 5;
-  // num num2 = 455;
-  // print(num1 <= num2);
-
-  // num num1 = 6;
-  // num num2 = 55;
-
-  // if (num1<= num2) {
-  //   print("True");
-  // } else {
-  //   print("False");
+  // List retList() {
+  //   return [];
   // }
 
-  // num num1 = 6;
-  // num num2 = 55;
-  // if ((num1 != num2) && (num1 > num2)) {
-  //   print("You are Right");
-  // } else {
-  //   print("Wrong");
+  // dynamic add(int a, int b) {
+  //   return a + b;
   // }
-
-  num num1 = 6;
-  num num2 = 55;
-  if ((num1 != num2) || (num1 > num2)) {
-    print("You are Right");
-  } else {
-    print("Wrong");
-  }
+  // var add_result = add(4, 4);
+  // print(add_result);
 }
