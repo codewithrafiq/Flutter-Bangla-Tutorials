@@ -13,3 +13,4 @@
 ### [Part - 4 ](https://github.com/codewithrafiq/Flutter-Bangla-Tutorials/tree/7ceffe5f424871b4d9ef7cfc87625c1eb6d836a4)
 ### [Part - 5 ](https://github.com/codewithrafiq/Flutter-Bangla-Tutorials/tree/e03b249d0e97eadd81fc6eb297ae73bebada9bc5)
 ### [Part - 6 ](https://github.com/codewithrafiq/Flutter-Bangla-Tutorials/tree/2cb287c1d05c2d61c676db4be9637f796e645dca)
+### [Part - 7 ](https://github.com/codewithrafiq/Flutter-Bangla-Tutorials/tree/4bf430f0284baba16429c2c45d357983685a6c36)
