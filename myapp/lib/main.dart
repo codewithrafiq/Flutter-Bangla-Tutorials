@@ -9,25 +9,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: Text("Home"),
-          actions: [
-            IconButton(
-              icon: Icon(Icons.add),
-              onPressed: () {},
-            )
-          ],
         ),
-        body: Center(
-          child: Card(
-            color: Colors.yellow,
-            child: Padding(
-              padding: EdgeInsets.all(15),
-              child: Text("Hello World"),
-            ),
-          ),
+        body: Container(
+          color: Colors.blue,
+          width: 500,
+          height: 100,
         ),
       ),
     );
