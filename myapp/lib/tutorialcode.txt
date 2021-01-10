@@ -1,0 +1,110 @@
+       
+        child: Container(
+          child: Text(
+            "Hello World",
+            style: TextStyle(
+              fontSize: 28,
+              color: Colors.green,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+
+
+
+        child: Center(
+            child: Text(
+              "Hello World",
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                color: Colors.green,
+              ),
+            ),
+          ),
+
+
+
+        child: Padding(
+            padding: EdgeInsets.all(25),
+            child: Text(
+              "Hello World",
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),
+            ),
+          ),
+
+
+          SafeArea(),
+
+
+        child: FlatButton(
+            child: Text("Click me"),
+            onPressed: () {
+              print("Button is Pressed");
+            },
+            color: Colors.green,
+          ),
+
+
+
+          child: RaisedButton(
+            child: Text(
+              "Click me",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 24,
+              ),
+            ),
+            onPressed: () {},
+            color: Colors.red,
+          ),
+
+
+
+
+                    child: IconButton(
+            icon: Icon(Icons.account_box),
+            onPressed: () {
+              print("Icon Button is Pressed");
+            },
+          ),
+
+
+
+          body: Center(
+          child: Container(
+            alignment: Alignment.center,
+            width: 100,
+            height: 100,
+            decoration: BoxDecoration(
+              color: Colors.green,
+              border: Border.all(
+                width: 5,
+                color: Colors.red,
+              ),
+            ),
+            child: Text("Hello World"),
+          ),
+        ),
+
+
+        child: FlatButton.icon(
+            icon: Icon(Icons.add_a_photo),
+            label: Text("Add Photo"),
+            onPressed: () {},
+          ),
+
+
+        child: RaisedButton.icon(
+            color: Colors.red,
+            icon: Icon(
+              Icons.add_a_photo,
+              color: Colors.white,
+            ),
+            label: Text("Add Photo"),
+            onPressed: () {},
+          ),
