@@ -1,5 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:myapp/model.dart';
+import 'package:myapp/singleTodoItem.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -7,65 +8,98 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int number = 0;
   String title = '';
-  List<String> inputdatas = [
-    "test title 1",
-    "test title 2",
+  final textControler = TextEditingController();
+
+  List<Todo> todoData = [
+    Todo(
+      id: "todo_1",
+      title: "Test title 1",
+      time: null,
+    ),
+    Todo(
+      id: "todo_2",
+      title: "Test title 2",
+      time: null,
+    ),
+    Todo(
+      id: "todo_3",
+      title: "Test title 3",
+      time: null,
+    ),
   ];
+
+  void _addTodo() {
+    Todo todo = Todo(
+      id: DateTime.now().toString(),
+      title: textControler.text,
+      time: DateTime.now(),
+    );
+    setState(() {
+      todoData.add(todo);
+    });
+    textControler.text = '';
+    title = '';
+  }
+
+  void delateTodo(String id) {
+    setState(() {
+      todoData.removeWhere((element) => element.id == id);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home Page"),
+        title: Text("ToDo App"),
       ),
-      body: Center(
+      body: Padding(
+        padding: EdgeInsets.all(15),
         child: Column(
           children: [
-            Text(
-              "$number",
-              style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-                color: Colors.red,
-              ),
-            ),
-            RaisedButton(
-              child: Text("Update"),
-              onPressed: () {
-                setState(() {
-                  number++;
-                });
-                print(number);
-              },
-            ),
-            Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: TextField(
-                onChanged: (v) {
-                  setState(() {
-                    title = v;
-                  });
-                },
-                decoration: InputDecoration(
-                  hintText: "Title",
-                  helperText: "Title",
+            Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    onChanged: (v) {
+                      setState(() {
+                        title = v;
+                      });
+                    },
+                    style: TextStyle(
+                      fontSize: 25,
+                    ),
+                    controller: textControler,
+                    decoration: InputDecoration(
+                      hintText: "Add Title",
+                    ),
+                  ),
                 ),
-              ),
+                IconButton(
+                  onPressed: title.length <= 0
+                      ? null
+                      : () {
+                          _addTodo();
+                        },
+                  icon: Icon(Icons.add),
+                  color: Colors.green,
+                )
+              ],
             ),
-            FlatButton(
-              child: Text("Add todo"),
-              onPressed: () {
-                setState(() {
-                  inputdatas.insert(0, title);
-                });
-              },
-              color: Colors.red,
-            ),
+            SizedBox(height: 40),
             Expanded(
               child: ListView.builder(
-                itemCount: inputdatas.length,
-                itemBuilder: (ctx, i) => Text("${inputdatas[i]}"),
+                itemCount: todoData.length,
+                itemBuilder: (ctx, i) {
+                  return SingleTodoItem(
+                    index: i + 1,
+                    id: todoData[i].id,
+                    title: todoData[i].title,
+                    datetime: todoData[i].time,
+                    delatetod: delateTodo,
+                  );
+                },
               ),
             ),
           ],
