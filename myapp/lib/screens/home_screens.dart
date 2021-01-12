@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/data/data.dart';
+import 'package:myapp/screens/cart_data_screens.dart';
 import 'package:myapp/widgets/single_order.dart';
 import 'package:myapp/widgets/single_restorents.dart';
 
@@ -9,6 +10,24 @@ class HomeScreens extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Restaurants"),
+        actions: [
+          FlatButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => CartDataScreens(),
+                ),
+              );
+            },
+            child: Text(
+              "Cart(${currentUser.cart.length})",
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ],
       ),
       body: ListView(
         children: [
