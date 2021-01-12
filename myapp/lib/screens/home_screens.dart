@@ -8,7 +8,7 @@ class HomeScreens extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Restorents"),
+        title: Text("Restaurants"),
       ),
       body: ListView(
         children: [
@@ -63,7 +63,7 @@ class HomeScreens extends StatelessWidget {
           Container(
             padding: EdgeInsets.all(12),
             child: Text(
-              "Restorents",
+              "Restaurant",
               style: Theme.of(context).textTheme.headline1,
             ),
           ),

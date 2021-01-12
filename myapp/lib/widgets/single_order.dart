@@ -61,11 +61,14 @@ class SingleOrder extends StatelessWidget {
           Container(
             child: IconButton(
               onPressed: () {},
-              icon: Icon(Icons.add),
+              icon: Icon(
+                Icons.add,
+                color: Colors.white,
+              ),
             ),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
-              color: Colors.greenAccent,
+              color: Theme.of(context).primaryColor,
             ),
           ),
           SizedBox(width: 15),

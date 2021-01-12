@@ -43,7 +43,14 @@ final _restaurant1 = Restaurant(
   name: 'Restaurant 1',
   address: '3500, cumilla,Bangladesh',
   rating: 4,
-  menu: [_food_2, _food_3, _food_4, _food_5, _food_6, _food_7],
+  menu: [
+    _food_2,
+    _food_3,
+    _food_4,
+    _food_5,
+    _food_6,
+    _food_7,
+  ],
 );
 final _restaurant2 = Restaurant(
   imageUrl: 'assets/restaurant2.jpg',

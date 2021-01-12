@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/screens/reastorent_details_screens.dart';
 import 'package:myapp/widgets/sters.dart';
 
 class SingleResrorents extends StatelessWidget {
@@ -32,13 +33,22 @@ class SingleResrorents extends StatelessWidget {
       ),
       child: Row(
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(20),
-            child: Image.asset(
-              imagaUrl,
-              height: 150,
-              width: 150,
-              fit: BoxFit.cover,
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => RestarontDetailsScreens(name),
+                ),
+              );
+            },
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image.asset(
+                imagaUrl,
+                height: 150,
+                width: 150,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           SizedBox(width: 15),
