@@ -9,15 +9,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: Colors.green,
-        accentColor: Colors.greenAccent,
-        brightness: Brightness.light,
         textTheme: TextTheme(
-          bodyText1: TextStyle(
-            fontSize: 22,
+          headline1: TextStyle(
             fontWeight: FontWeight.bold,
-            color: Theme.of(context).accentColor,
+            fontSize: 22,
+          ),
+          bodyText1: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 16,
           ),
         ),
       ),

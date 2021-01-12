@@ -60,7 +60,7 @@ final _restaurant3 = Restaurant(
   menu: [_food_1, _food_2, _food_6, _food_7, _food_8],
 );
 final _restaurant4 = Restaurant(
-  imageUrl: 'assets/restaurant4.jpg',
+  imageUrl: 'assets/restaurant3.jpg',
   name: 'Restaurant 4',
   address: '3500, cumilla,Bangladesh',
   rating: 3,
@@ -77,7 +77,7 @@ final List<Restaurant> restaurants = [
 
 // User
 final currentUser = User(
-  name: 'Rebecca',
+  name: 'CodeWithRafiq',
   orders: [
     Order(
       date: 'Nov 10, 2020',
