@@ -17,3 +17,4 @@
 ### [Part - 8 - ToDo List App](https://github.com/codewithrafiq/Flutter-Bangla-Tutorials/tree/641c623885036108676237d74e9ccf23d4962d1b)
 ### [Part - 9 - Theme and Assets](https://github.com/codewithrafiq/Flutter-Bangla-Tutorials/tree/1b73855fde75a74d29e1f5b1a0e5ec6d1ed5f6b6)
 ### [Part - 10 - Restaurant app part -1](https://github.com/codewithrafiq/Flutter-Bangla-Tutorials/tree/6fc56ce48f0fd35b39598fabbdd0d23d17f2f6b1)
+### [Part - 11 - Restaurant app part -2](https://github.com/codewithrafiq/Flutter-Bangla-Tutorials/tree/e0aefb3162dd8114ac69bfd8af5f86ffcc18887a)
