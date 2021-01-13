@@ -1,7 +1,10 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:myapp/screens/home_screens.dart';
+import 'package:myapp/home_screens.dart';
 
-main() {
+main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -10,19 +13,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: Colors.green,
-        textTheme: TextTheme(
-          headline1: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 22,
-          ),
-          bodyText1: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 16,
-          ),
-        ),
-      ),
       home: HomeScreens(),
     );
   }
