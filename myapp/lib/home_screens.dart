@@ -1,6 +1,7 @@
 import 'dart:ffi';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/single_todo.dart';
@@ -18,31 +19,47 @@ class _HomeScreensState extends State<HomeScreens> {
     if (_textField.text.length <= 0) {
       return;
     }
-
-    final collucrion = FirebaseFirestore.instance.collection('todo');
-
-    await collucrion.add({
-      "title": _textField.text,
-    });
-
-    _textField.text = '';
-    Navigator.of(context).pop();
+    String uid = FirebaseAuth.instance.currentUser.uid;
+    try {
+      final collection = FirebaseFirestore.instance
+          .collection('todo')
+          .doc(uid)
+          .collection('title');
+      await collection.add({
+        "title": _textField.text,
+      });
+      Navigator.of(context).pop();
+      _textField.text = '';
+    } catch (e) {
+      print(e);
+    }
   }
 
   Future<void> delateTodo(String id) async {
+    String uid = FirebaseAuth.instance.currentUser.uid;
+
     try {
-      final collucrion = FirebaseFirestore.instance.collection('todo').doc(id);
-      await collucrion.delete();
+      await FirebaseFirestore.instance
+          .collection('todo')
+          .doc(uid)
+          .collection('title')
+          .doc(id)
+          .delete();
     } catch (e) {
       print(e);
     }
   }
 
   Future<void> _updatetod(String id) async {
+    String uid = FirebaseAuth.instance.currentUser.uid;
+
     String updateText = _todoUpdate.text;
     try {
-      DocumentReference documentReference =
-          FirebaseFirestore.instance.collection('todo').doc(id);
+      DocumentReference documentReference = FirebaseFirestore.instance
+          .collection('todo')
+          .doc(uid)
+          .collection('title')
+          .doc(id);
       FirebaseFirestore.instance.runTransaction((transaction) async {
         await transaction.get(documentReference);
         transaction.update(documentReference, {
@@ -51,11 +68,19 @@ class _HomeScreensState extends State<HomeScreens> {
       });
       Navigator.of(context).pop();
       _todoUpdate.text = '';
-    } catch (e) {}
+    } catch (e) {
+      print(e);
+    }
   }
 
   Future<void> editButton(String id) async {
-    final collucrion = FirebaseFirestore.instance.collection('todo').doc(id);
+    String uid = FirebaseAuth.instance.currentUser.uid;
+
+    final collucrion = FirebaseFirestore.instance
+        .collection('todo')
+        .doc(uid)
+        .collection('title')
+        .doc(id);
     await collucrion.get().then((value) {
       _todoUpdate.text = value.data()['title'];
     });
@@ -95,9 +120,21 @@ class _HomeScreensState extends State<HomeScreens> {
       appBar: AppBar(
         title: Text("Todo App"),
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.logout),
+            onPressed: () {
+              FirebaseAuth.instance.signOut();
+            },
+          )
+        ],
       ),
       body: StreamBuilder(
-        stream: FirebaseFirestore.instance.collection("todo").snapshots(),
+        stream: FirebaseFirestore.instance
+            .collection('todo')
+            .doc(FirebaseAuth.instance.currentUser.uid)
+            .collection('title')
+            .snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (!snapshot.hasData) {
             return Center(
